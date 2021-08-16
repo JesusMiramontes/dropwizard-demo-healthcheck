@@ -1,6 +1,7 @@
 package dropwizarddemo.runner;
 
 import dropwizarddemo.config.BRSConfiguration;
+import dropwizarddemo.resource.BookReviewResource;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Environment;
 
@@ -12,5 +13,6 @@ public class BookReviewSystemRunner extends Application<BRSConfiguration> {
     @Override
     public void run(BRSConfiguration brsConfiguration, Environment environment) throws Exception {
         System.out.println("Running.");
+        environment.jersey().register(new BookReviewResource());
     }
 }
